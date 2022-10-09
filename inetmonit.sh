@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set target host IP or hostname
-TARGET_HOST='host.com.br'
+TARGET_HOST='host'
 
 count=$(ping -c 3 $TARGET_HOST | grep from* | wc -l)
 
