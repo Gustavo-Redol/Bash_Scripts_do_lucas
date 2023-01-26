@@ -6,7 +6,6 @@ echo "################################"
 
 echo " "
 echo " "
-
 echo "#######################################################"
 echo "######### Canivete Suíço (Script-Multi-Tool) ##########"
 echo "#######################################################"
@@ -14,15 +13,18 @@ echo "#######################################################"
 echo " "
 echo " "
 
+
 echo "Qual ferramenta você deseja utilizar?"
 echo "1 - Whois"
 echo "2 - Nslookup"
 echo "3 - Dig IN MX"
+echo "4 - Instruções de uso"
 echo " "
 echo "Selecione um número:" 
 read toolselect
-echo " "
 
+dns=$(nslookup hostname | grep "Address:")
+echo " "
 if [ "$toolselect" == "1" ]
 then
 	echo "Whois Tool Selecionada"
@@ -44,7 +46,7 @@ then
 
 	for domain in $(cat $path);
 	do
-		nslookup $domain | grep -E "Name:|Address:" | grep -v "Address:	xxxxxxx#53"  
+		nslookup $domain | grep -E "Name:|Address:" | grep -v "$dns"
 
 	done
 
@@ -62,7 +64,16 @@ then
 
 	done
 
-
+elif [ "$toolselect" == "4" ]
+then
+	echo "Selecione uma das ferramentas para utilizá-la em uma lista de domínios ou servidores"
+	echo "Após isso, escreva o nome do arquivo de texto que contém a lista formatada corretamente"
+	echo " "
+	echo "Exemplo:" 
+	echo "Insira o nome do arquivo que contém a lista para análise:"
+        echo "domains_list.txt"
+	echo " "
+	echo "Qualquer dúvida, entre em contato com o Lucas!"
 else
 	echo "OPÇÃO INVÁLIDA"
 
