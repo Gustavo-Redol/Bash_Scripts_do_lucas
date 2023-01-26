@@ -24,6 +24,7 @@ echo "Selecione um número:"
 read toolselect
 
 dns=$(nslookup hostname | grep "Address:")
+
 echo " "
 if [ "$toolselect" == "1" ]
 then
@@ -31,7 +32,8 @@ then
 	echo " "
 	echo "Insira o nome do arquivo que contém a lista para análise:"
 	read path
-
+	
+	echo " "
 	for domain in $(cat $path);
 	do
 		whois $domain | grep -E "domain:|nserver:" 	
@@ -43,7 +45,8 @@ then
 	echo " "
 	echo "Insira o nome do arquivo que contém a lista para análise:"
 	read path
-
+	
+	echo " "
 	for domain in $(cat $path);
 	do
 		nslookup $domain | grep -E "Name:|Address:" | grep -v "$dns"
@@ -58,6 +61,7 @@ then
 	echo "Insira o nome do arquivo que contém a lista para análise:"
 	read path
 	
+	echo " " 
 	for domain in $(cat $path);
 	do
 		dig in mx $domain 
@@ -73,7 +77,7 @@ then
 	echo "Insira o nome do arquivo que contém a lista para análise:"
         echo "domains_list.txt"
 	echo " "
-	echo "Qualquer dúvida, entre em contato com o administrador!"
+	echo "Qualquer dúvida, entre em contato com o Lucas!"
 else
 	echo "OPÇÃO INVÁLIDA"
 
