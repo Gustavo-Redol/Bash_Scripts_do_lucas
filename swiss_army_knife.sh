@@ -73,7 +73,7 @@ then
 	echo "Insira o nome do arquivo que contém a lista para análise:"
         echo "domains_list.txt"
 	echo " "
-	echo "Qualquer dúvida, entre em contato com o Lucas!"
+	echo "Qualquer dúvida, entre em contato com o administrador!"
 else
 	echo "OPÇÃO INVÁLIDA"
 
