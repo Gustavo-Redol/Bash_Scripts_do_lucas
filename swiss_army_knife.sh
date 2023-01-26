@@ -44,7 +44,7 @@ then
 
 	for domain in $(cat $path);
 	do
-		nslookup $domain | grep -E "Name:|Address:" | grep -v "Address:	172.23.224.1#53"  
+		nslookup $domain | grep -E "Name:|Address:" | grep -v "Address:	xxxxxxx#53"  
 
 	done
 
