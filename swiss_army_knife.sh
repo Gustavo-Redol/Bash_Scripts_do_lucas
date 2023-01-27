@@ -15,7 +15,7 @@ echo " "
 
 
 echo "Qual ferramenta você deseja utilizar?"
-echo "1 - Whois"
+echo "1 - Whois - NameServers"
 echo "2 - Nslookup"
 echo "3 - Dig IN MX"
 echo "4 - Instruções de uso"
@@ -28,7 +28,7 @@ dns=$(nslookup hostname | grep "Address:")
 echo " "
 if [ "$toolselect" == "1" ]
 then
-	echo "Whois Tool Selecionada"
+	echo "Whois Name Server Tool Selecionada"
 	echo " "
 	echo "Insira o nome do arquivo que contém a lista para análise:"
 	read path
@@ -64,7 +64,7 @@ then
 	echo " " 
 	for domain in $(cat $path);
 	do
-		dig in mx $domain 
+		dig in mx $domain | grep -E "in mx|MX" | grep -v "; <<>> DiG 9.16.23-RH <<>>" |  grep -v ";" 
 
 	done
 
