@@ -1,18 +1,5 @@
 #!/bin/bash
-
-if [ "$1" == " "  ]
-then
-	echo "#################################"
-	echo "########## ANON JUMPER ##########"
-	echo "#################################"
-	echo "######## Developed by: N0KK #####"
-	echo "#################################"
-	echo "Para ativar o anon jumper: $0 on"
-	echo "Para desativar o anon jumper: $0 off"
-
-
-
-elif [ "$1" == "on" ]
+if [ "$1" == "on" ]
 then
 	echo "#################################"
 	echo "########## ANON JUMPER ##########"
@@ -39,9 +26,13 @@ then
 	anonsurf stop
 
 else
-       	echo "#################################"
-	echo "########## ANON JUMPER ##########"
-	echo "################################"
-	echo "######## Developed by: N0KK #####"
-	echo "#################################"
+
+        echo "#################################"
+        echo "########## ANON JUMPER ##########"
+        echo "#################################"
+        echo "######## Developed by: N0KK #####"
+        echo "#################################"
+        echo "Para ativar o anon jumper: $0 on"
+        echo "Para desativar o anon jumper: $0 off"
+
 fi
