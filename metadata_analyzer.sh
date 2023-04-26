@@ -24,6 +24,10 @@ for url in $(cat "$path/$target/docs_urls.txt"); do
         wget -q -P "$path/$target/docs_files" "$url";
 done
 echo ""
-echo "Realizando a análise dos metadados de PDF."
+echo "Realizando a análise dos metadados dos arquivos de PDF."
 exiftool $path/$target/pdf_files/*.pdf > $path/$target/pdf_analyzer.txt
 
+echo "Realizando a análise dos metadados dos docs"
+exiftool $path/$target/docs_files/*.doc > $path/$target/doc_analyzer.txt
+echo ""
+echo "O procedimento foi finalizado, verifique os arquivos em: $path/$target"
