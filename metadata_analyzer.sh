@@ -1,7 +1,7 @@
 #!/bin/bash
 
 target="$1"
-path="/home/n0kk"
+path="$(pwd)"
 mkdir $target
 mkdir "$target/pdf_files"
 mkdir "$target/docs_files"
