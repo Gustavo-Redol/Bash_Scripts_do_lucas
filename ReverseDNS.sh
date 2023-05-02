@@ -8,7 +8,7 @@ read last_num
 
 for range in $(seq $first_num $last_num);
 do
-host -t ptr $1.$range | grep -v "$1"
+host -t ptr $1.$range | grep -v "$1" | cut -d " " -f 5
 done
 
 
