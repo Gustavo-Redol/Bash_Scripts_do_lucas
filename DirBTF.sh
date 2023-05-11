@@ -1,7 +1,7 @@
 #!/bin/bash
 
-dirpath="/home/n0kk/N0KK_Wordlists/dirbruteforce.txt"
-filepath="/home/n0kk/N0KK_Wordlists/filebruteforce.txt"
+dirpath="insira a wordlist de diretórios aqui"
+filepath="insira a wordlist de arquivos aqui"
 
 echo "Iniciando o DirBTF"
 echo ""
