@@ -17,8 +17,12 @@ else
 	echo "######## Developed by: N0KK ####"
 	echo "################################"
 
-for host in {1..254}; 
+ 
+read -p "Digite o final do primeiro IP do range: " frst
+read -p "Digite o final do último IP do range: " lst
+
+	for host in $(seq $frst $lst) 
 do
-	ping -c1 $1.$host | grep "64 bytes" | cut -d " " -f 4 | sed 's/.$//';
+	ping -c1 $1.$host -w 1| grep "64 bytes" | cut -d " " -f 4 | sed 's/.$//';
 done
 fi
