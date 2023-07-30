@@ -10,14 +10,14 @@ then
 echo "Iniciando o anonjumper em conjunto com o anonsurf"
 echo " "
 anonsurf start
-sleep 1m
+sleep 5m
 echo " "
 while true;
 do
 	echo "Realizando a troca de IP"
 	echo ""
 	anonsurf change
-	sleep 1m
+	sleep 5m
 done
 elif [ "$1" == "off" ]
 then
