@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo su
 directory="/home/n0kk/Downloads"
 
 echo "Instalando o VS Code!"
